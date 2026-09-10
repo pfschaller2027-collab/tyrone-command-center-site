@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Tyrone Command Center</title>
+<meta name="description" content="What Tyrone Command Center is, how the TikTok, YouTube, and Instagram integrations work, and what it does not do.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">TYRONE <span>COMMAND CENTER</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <span class="tag">About</span>
+  <h1>What Tyrone Command Center is</h1>
+  <p class="lede">A native desktop application (built with Tauri) that gives one person a single dashboard for the social accounts they already own, plus a local, private AI assistant.</p>
+
+  <h2>Account Center</h2>
+  <p>The Account Center lets you connect accounts on supported platforms through each platform's own official sign-in flow:</p>
+  <table>
+    <tr><th>Platform</th><th>How you connect</th><th>What Tyrone can read</th></tr>
+    <tr><td>YouTube</td><td>Google OAuth 2.0</td><td>Your own channel's public/owner-visible stats and analytics (read-only)</td></tr>
+    <tr><td>TikTok</td><td>TikTok Login Kit (OAuth 2.0 + PKCE)</td><td>Basic profile info (name, avatar, ID) for the account you authorize</td></tr>
+    <tr><td>Instagram</td><td>Meta Graph API OAuth</td><td>Basic business-account info and insights for the account you authorize</td></tr>
+  </table>
+  <p>You can connect more than one account per platform, rename them locally, refresh their status, or disconnect and remove them at any time. Disconnecting revokes Tyrone's access with the platform itself, not just locally.</p>
+
+  <h2>Local AI assistant</h2>
+  <p>Tyrone includes an optional voice/command layer for quick actions (like refreshing an account or opening an app) and a "Second Brain" feature that indexes a folder of your own Markdown notes (compatible with Obsidian) so the assistant can reference and add to them. Both features run entirely on your own computer — there is no cloud AI backend that receives this data.</p>
+
+  <h2>What Tyrone Command Center does not do</h2>
+  <ul>
+    <li>It does not post, message, or take any action on your behalf that you did not explicitly trigger.</li>
+    <li>It does not attempt to automate engagement in a way designed to evade a platform's spam detection, rate limits, or enforcement.</li>
+    <li>It does not claim partnership, endorsement, or verification from TikTok, YouTube/Google, or Meta.</li>
+    <li>It does not guarantee that any connected account is safe from action taken by the platform itself.</li>
+  </ul>
+
+  <div class="callout">
+    Full details on what data is processed and how it's stored: see the <a href="privacy.html">Privacy Policy</a>. Full usage terms: see the <a href="terms.html">Terms of Service</a>.
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <p>Contact / support: <a href="mailto:pfschaller2027@gmail.com">pfschaller2027@gmail.com</a></p>
+    <p>© 2026 Tyrone Command Center. Independent desktop software project.</p>
+  </div>
+</footer>
+</body>
+</html>

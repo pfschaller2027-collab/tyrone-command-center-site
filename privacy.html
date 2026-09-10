@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Tyrone Command Center</title>
+<meta name="description" content="Privacy Policy for Tyrone Command Center — what data is processed, how OAuth tokens are stored, and what is never collected.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">TYRONE <span>COMMAND CENTER</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <span class="tag">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: September 9, 2026</p>
+
+  <div class="callout">
+    Tyrone Command Center is a local desktop application. There is no company server that receives, stores, or sells your data. This policy describes exactly what the App itself processes on your own device and what it sends directly to the platforms you connect.
+  </div>
+
+  <h2>1. Summary</h2>
+  <ul>
+    <li>The App does not have its own backend server. It runs entirely on your computer.</li>
+    <li>The App does not include any analytics, tracking, or advertising SDK of any kind.</li>
+    <li>Data the App reads from a connected platform is requested directly from that platform's own official API, using credentials you explicitly authorize, and is stored only on your own device.</li>
+    <li>The App never sells, rents, or shares your data with anyone, because it does not transmit your data to any party other than the platform you explicitly connected.</li>
+  </ul>
+
+  <h2>2. Information processed when you connect an account</h2>
+  <p>When you connect an account, the App opens that platform's own official sign-in page in your browser. You authorize a specific, limited set of permissions ("scopes") on that page — the App never sees or asks for your password.</p>
+
+  <h3>TikTok (Login Kit)</h3>
+  <p>Current authorized scope: <code>user.info.basic</code>. This returns only: your TikTok open ID, display name, and avatar URL. The App does not currently request your TikTok username, follower/following/like/video counts, or your video list — those require additional scopes the App does not request today.</p>
+
+  <h3>YouTube (Google OAuth)</h3>
+  <p>Scopes: <code>youtube.readonly</code> and <code>yt-analytics.readonly</code>. This returns your channel's basic profile info, video list, and read-only analytics/statistics for the channel you authorize. The App never requests upload, comment, or account-modification permissions.</p>
+
+  <h3>Instagram (Meta Graph API)</h3>
+  <p>Scopes: <code>instagram_business_basic</code> and <code>instagram_business_manage_insights</code>. This returns basic business-account profile info and insights for the account you authorize.</p>
+
+  <h2>3. Local application data</h2>
+  <p>The App stores the following only in a local application-support folder on your own computer (never transmitted anywhere):</p>
+  <ul>
+    <li><strong>Account list</strong> — display name, username, avatar URL, platform, and connection status for each account you've added. This file never contains an access token or refresh token.</li>
+    <li><strong>OAuth tokens</strong> — access and refresh tokens are stored in a separate location, encrypted at rest with AES-256-GCM, in files only your own macOS user account can read (owner-only file permissions). Tokens are never written into the account list file, never sent to the App's UI/frontend code as plain values, and never written to any log file.</li>
+    <li><strong>Optional personal notes ("Second Brain")</strong> — if you choose to connect a folder of your own Markdown notes, the App indexes titles, tags, and links from those files locally so its assistant feature can reference them. This never leaves your device and is never sent to any third party.</li>
+    <li><strong>Diagnostic log</strong> — a local log of connection attempts (e.g. "TikTok: opening browser," "token exchange failed") used for troubleshooting. Token and secret values are deliberately redacted before anything is ever written to this file.</li>
+  </ul>
+
+  <h2>4. Where your Client Secret lives</h2>
+  <p>Each connected platform requires a developer application (Client ID/Key and Client Secret) that the App's developer registers with that platform. These values are stored in a local configuration file on the developer's own machine, are never bundled into the App's user interface code, never sent to any server, and never appear in application logs.</p>
+
+  <h2>5. What is transmitted, and to whom</h2>
+  <p>The only network requests the App makes related to your accounts go directly from your device to the official API of the platform you connected (TikTok, Google/YouTube, or Meta/Instagram) — for example, to exchange an authorization code for a token, refresh an expired token, or fetch the profile/analytics data described above. No account data passes through any server operated by the App's developer, because no such server exists.</p>
+
+  <h2>6. Security practices</h2>
+  <ul>
+    <li>OAuth tokens are encrypted at rest (AES-256-GCM) with a locally generated key, never stored in plaintext.</li>
+    <li>Token and credential files are restricted to owner-only file permissions on disk.</li>
+    <li>The App's authorization flow uses PKCE and a per-attempt random state value to protect against interception and cross-site request forgery.</li>
+    <li>Error messages and diagnostic logs are sanitized to strip anything that looks like a token or credential before being written or displayed.</li>
+  </ul>
+
+  <h2>7. Data retention and deletion</h2>
+  <p>You control retention directly from within the App:</p>
+  <ul>
+    <li><strong>Disconnect</strong> revokes the App's access with the platform itself (where the platform's API supports revocation) and deletes the locally stored encrypted token for that account.</li>
+    <li><strong>Remove</strong> deletes the local account record entirely.</li>
+  </ul>
+  <p>Because all of this data lives only on your own device, uninstalling the App and deleting its application-support folder removes all of it.</p>
+
+  <h2>8. Your rights</h2>
+  <p>Since the App does not operate a server and does not collect data about you beyond what's described above (stored only on your own device), most data-subject rights are already in your direct control through the App's own Disconnect/Remove features. For any other question about this policy, contact the developer using the information below.</p>
+
+  <h2>9. Children's privacy</h2>
+  <p>The App is not directed at children, and connecting a social media account through it requires you to meet that platform's own minimum age and account eligibility requirements.</p>
+
+  <h2>10. Changes to this policy</h2>
+  <p>This policy may be updated as the App's functionality changes. Material changes will be reflected by an updated "Last updated" date on this page.</p>
+
+  <h2>11. Contact</h2>
+  <p>Questions about this Privacy Policy can be sent to <a href="mailto:pfschaller2027@gmail.com">pfschaller2027@gmail.com</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <p>Contact / support: <a href="mailto:pfschaller2027@gmail.com">pfschaller2027@gmail.com</a></p>
+    <p>© 2026 Tyrone Command Center. Independent desktop software project.</p>
+  </div>
+</footer>
+</body>
+</html>
